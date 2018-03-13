@@ -53,7 +53,7 @@ export default class MainScreen extends Component {
                     <Button color='#fff' title="Random" onPress={() => console.log('random')}>
                         Random
                     </Button>
-                    <Button color='#fff' title="Results" onPress={() => this.props.navigation.navigate('Results')}>
+                    <Button color='#fff' title="Results" onPress={() => this.props.navigation.navigate('Results', this.state)}>
                         Results
                     </Button>
                 </View>

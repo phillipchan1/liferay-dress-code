@@ -2,10 +2,6 @@ import React, { Component } from 'react'
 import { Button, Image, ScrollView, StyleSheet, Text, View } from 'react-native'
 import BgAudio from 'react-native-background-audio'
 
-import shirt1 from '../../../assets/shirt1.png'
-import pants1 from '../../../assets/pants1.png'
-import shoes1 from '../../../assets/shoes1.png'
-
 export default class ResultsScreen extends Component {
     render() {
         return (
@@ -13,11 +9,11 @@ export default class ResultsScreen extends Component {
                 <ScrollView>
                     <View style={styles.content}>
                         <Text style={styles.heading}>Looking snazzy!</Text>
-                        <Image source={shirt1} style={styles.image} />
+                        <Image source={this.props.navigation.state.params.tops.image} style={styles.image} />
                         <View style={styles.separator} />
-                        <Image source={pants1} style={styles.image} />
+                        <Image source={this.props.navigation.state.params.bottoms.image} style={styles.image} />
                         <View style={styles.separator} />
-                        <Image source={shoes1} style={styles.image} />
+                        <Image source={this.props.navigation.state.params.shoes.image} style={styles.image} />
                     </View>
                 </ScrollView>
 
