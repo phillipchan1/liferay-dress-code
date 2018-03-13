@@ -10,20 +10,21 @@ export default class MainScreen extends Component {
         return (
             <View style={styles.container}>
                 <View style={styles.content}>
-                    <Text>Content</Text>
-                    <Image source={shirt1} />
-                    <Image source={pants1} />
-                    <Image source={shoes1} />
+                    <Image source={shirt1} style={styles.image} />
+                    <View style={styles.separator} />
+                    <Image source={pants1} style={styles.image} />
+                    <View style={styles.separator} />
+                    <Image source={shoes1} style={styles.image} />
                 </View>
 
                 <View style={styles.navigation}>
-                    <Button title="presets" onPress={() => console.log('presets')}>
+                    <Button color='#fff' title="Presets" onPress={() => console.log('presets')}>
                         Presets
                     </Button>
-                    <Button title="rand" onPress={() => console.log('rand')}>
+                    <Button color='#fff' title="Random" onPress={() => console.log('random')}>
                         Random
                     </Button>
-                    <Button title="results" onPress={() => console.log('results')}>
+                    <Button color='#fff' title="Results" onPress={() => this.props.navigation.navigate('Results')}>
                         Results
                     </Button>
                 </View>
@@ -33,6 +34,13 @@ export default class MainScreen extends Component {
 }
 
 const styles = StyleSheet.create({
+    separator: {
+        borderBottomColor: '#dfdfdf',
+        borderBottomWidth: 2,
+        height: 1,
+        margin: 15,
+        width: 300,
+    },
     container: {
         backgroundColor: '#dfdfdf',
         flex: 1,
@@ -42,6 +50,10 @@ const styles = StyleSheet.create({
         backgroundColor: 'skyblue',
         flex: 1,
         justifyContent: 'center',
+    },
+    image: {
+        height: 150,
+        width: 150,
     },
     navigation: {
         backgroundColor: 'steelblue',

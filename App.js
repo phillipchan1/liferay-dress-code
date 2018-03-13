@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
 import { StackNavigator } from 'react-navigation'
 
-import HomeScreen from './components/pages/HomeScreen'
-import ResultsScreen from './components/pages/ResultsScreen'
 import MainScreen from './components/pages/MainScreen'
+import ResultsScreen from './components/pages/ResultsScreen'
+import SplashScreen from './components/pages/SplashScreen'
 
 const RootStack = StackNavigator(
     {
         Home: {
-            screen: HomeScreen,
+            screen: SplashScreen,
         },
         Main: {
             screen: MainScreen,
