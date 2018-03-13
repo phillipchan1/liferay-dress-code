@@ -18,7 +18,7 @@ const RootStack = StackNavigator(
         },
     },
     {
-        initialRouteName: 'SplashScreen',
+        initialRouteName: 'MainScreen',
     }
 )
 

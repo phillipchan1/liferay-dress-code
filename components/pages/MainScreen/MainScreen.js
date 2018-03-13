@@ -4,8 +4,26 @@ import { Button, Image, StyleSheet, Text, View } from 'react-native'
 import shirt1 from '../../../assets/shirt1.png'
 import pants1 from '../../../assets/pants1.png'
 import shoes1 from '../../../assets/shoes1.png'
+import { StyleSheet, Text, View } from 'react-native'
+// import Carousel from '../../molecules/carousel/carousel';
 
 export default class MainScreen extends Component {
+    constructor() {
+        super();
+
+        this.state = {
+            tops: tops[0]
+        }
+    }
+
+    handleImageChange(data) {
+        this.setState(() => (
+            {
+                [data.group]: tops[data.index]
+            }
+        ));
+    }
+
     render() {
         return (
             <View style={styles.container}>
@@ -16,7 +34,13 @@ export default class MainScreen extends Component {
                     <View style={styles.separator} />
                     <Image source={shoes1} style={styles.image} />
                 </View>
-
+            {/*    <Carousel
+                    currentImage={this.state.tops}
+                    style={styles.carousel}
+                    group="tops"
+                    length={tops.length - 1}
+                    onImageChange={(data) => this.handleImageChange(data) }
+                />*/}
                 <View style={styles.navigation}>
                     <Button color='#fff' title="Presets" onPress={() => console.log('presets')}>
                         Presets
@@ -32,6 +56,21 @@ export default class MainScreen extends Component {
         )
     }
 }
+
+var tops = [
+    {
+        url: 'shirt1',
+        index: 0,
+    },
+    {
+        url: 'shirt2',
+        index: 1,
+    },
+    {
+        url: 'shirt3',
+        index: 2,
+    }
+];
 
 const styles = StyleSheet.create({
     separator: {
