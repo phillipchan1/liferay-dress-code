@@ -1,6 +1,7 @@
 import React from 'react'
 import { AppRegistry, View, StyleSheet, Text, Image } from 'react-native'
 import GestureRecognizer, { swipeDirections } from 'react-native-swipe-gestures'
+import shoes1 from '../../../assets/shoes1.png'
 
 export default class Carousel extends React.Component {
 
@@ -33,8 +34,6 @@ export default class Carousel extends React.Component {
 	}
 
 	render() {
-		const imageUrl = `../../../assets/${this.props.currentImage.url}.png`;
-
 		return (
 			<GestureRecognizer
 				onSwipeLeft={this.swipedLeft.bind(this)}
@@ -42,8 +41,8 @@ export default class Carousel extends React.Component {
 				style={styles.carousel}
 			>
 				<Image
-					style={{ width: "100%", height: 100 }}
-					source={require(imageUrl)}
+					style={{ width: "100%", height: "100%" }}
+					source={this.props.currentImage.image}
 				/>
 			</GestureRecognizer>
 		)
@@ -52,7 +51,8 @@ export default class Carousel extends React.Component {
 
 const styles = StyleSheet.create({
 	carousel: {
-		height: 150,
+		height: 33,
+		flex: 1
 	},
 })
 

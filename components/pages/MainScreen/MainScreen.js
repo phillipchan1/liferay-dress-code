@@ -1,25 +1,23 @@
 import React, { Component } from 'react'
-import { Button, Image, ScrollView, StyleSheet, Text, View } from 'react-native'
-
-import shirt1 from '../../../assets/shirt1.png'
-import pants1 from '../../../assets/pants1.png'
-import shoes1 from '../../../assets/shoes1.png'
-import { StyleSheet, Text, View } from 'react-native'
-// import Carousel from '../../molecules/carousel/carousel';
+import { Button, Image, StyleSheet, Text, View } from 'react-native'
+import Carousel from '../../molecules/carousel/carousel';
 
 export default class MainScreen extends Component {
     constructor() {
         super();
 
         this.state = {
-            tops: tops[0]
+            tops: clothing.tops[0],
+            bottoms: clothing.bottoms[0],
+            shoes: clothing.shoes[0]
         }
     }
 
     handleImageChange(data) {
+        console.log(data.group);
         this.setState(() => (
             {
-                [data.group]: tops[data.index]
+                [data.group]: clothing[data.group][data.index]
             }
         ));
     }
@@ -27,24 +25,27 @@ export default class MainScreen extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <View style={styles.container}>
-                    <ScrollView>
-                        <View style={styles.content}>
-                            <Image source={shirt1} style={styles.image} />
-                            <View style={styles.separator} />
-                            <Image source={pants1} style={styles.image} />
-                            <View style={styles.separator} />
-                            <Image source={shoes1} style={styles.image} />
-                        </View>
-                    </ScrollView>
-                </View>
-            {/*    <Carousel
+                <Carousel
                     currentImage={this.state.tops}
                     style={styles.carousel}
                     group="tops"
-                    length={tops.length - 1}
+                    length={clothing.tops.length - 1}
                     onImageChange={(data) => this.handleImageChange(data) }
-                />*/}
+                />
+                <Carousel
+                    currentImage={this.state.bottoms}
+                    style={styles.carousel}
+                    group="bottoms"
+                    length={clothing.bottoms.length - 1}
+                    onImageChange={(data) => this.handleImageChange(data) }
+                />
+                <Carousel
+                    currentImage={this.state.shoes}
+                    style={styles.carousel}
+                    group="shoes"
+                    length={clothing.shoes.length - 1}
+                    onImageChange={(data) => this.handleImageChange(data) }
+                />
                 <View style={styles.navigation}>
                     <Button color='#fff' title="Presets" onPress={() => console.log('presets')}>
                         Presets
@@ -61,20 +62,50 @@ export default class MainScreen extends Component {
     }
 }
 
-var tops = [
-    {
-        url: 'shirt1',
-        index: 0,
-    },
-    {
-        url: 'shirt2',
-        index: 1,
-    },
-    {
-        url: 'shirt3',
-        index: 2,
-    }
-];
+const clothing = {
+    tops: [
+        {
+            image: require('../../../assets/shirt1.png'),
+            index: 0,
+        },
+        {
+            image: require('../../../assets/shirt2.png'),
+            index: 1,
+        },
+        {
+            image: require('../../../assets/shirt3.png'),
+            index: 2,
+        }
+    ],
+    bottoms: [
+        {
+            image: require('../../../assets/pants1.png'),
+            index: 0,
+        },
+        {
+            image: require('../../../assets/pants2.png'),
+            index: 1,
+        },
+        {
+            image: require('../../../assets/pants3.png'),
+            index: 2,
+        }
+    ],
+    shoes: [
+        {
+            image: require('../../../assets/shoes1.png'),
+            index: 0,
+        },
+        {
+            image: require('../../../assets/shoes2.png'),
+            index: 1,
+        },
+        {
+            image: require('../../../assets/shoes3.png'),
+            index: 2,
+        }
+    ]
+}
 
 const styles = StyleSheet.create({
     separator: {
@@ -95,7 +126,7 @@ const styles = StyleSheet.create({
         paddingTop: 30,
     },
     image: {
-        height: 150,
+        height: "100%",
         width: 150,
     },
     navigation: {
