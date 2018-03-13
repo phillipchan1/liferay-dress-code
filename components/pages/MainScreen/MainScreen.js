@@ -1,5 +1,9 @@
 import React, { Component } from 'react'
-import { Button, StyleSheet, Text, View } from 'react-native'
+import { Button, Image, StyleSheet, Text, View } from 'react-native'
+
+import shirt1 from '../../../assets/shirt1.png'
+import pants1 from '../../../assets/pants1.png'
+import shoes1 from '../../../assets/shoes1.png'
 
 export default class MainScreen extends Component {
     render() {
@@ -7,6 +11,9 @@ export default class MainScreen extends Component {
             <View style={styles.container}>
                 <View style={styles.content}>
                     <Text>Content</Text>
+                    <Image source={shirt1} />
+                    <Image source={pants1} />
+                    <Image source={shoes1} />
                 </View>
 
                 <View style={styles.navigation}>
