@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Button, Image, StyleSheet, Text, View } from 'react-native'
+import { Button, Image, ScrollView, StyleSheet, Text, View } from 'react-native'
 import BgAudio from 'react-native-background-audio'
 
 import shirt1 from '../../../assets/shirt1.png'
@@ -10,14 +10,16 @@ export default class ResultsScreen extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <View style={styles.content}>
-                    <Text style={styles.heading}>Looking snazzy!</Text>
-                    <Image source={shirt1} style={styles.image} />
-                    <View style={styles.separator} />
-                    <Image source={pants1} style={styles.image} />
-                    <View style={styles.separator} />
-                    <Image source={shoes1} style={styles.image} />
-                </View>
+                <ScrollView>
+                    <View style={styles.content}>
+                        <Text style={styles.heading}>Looking snazzy!</Text>
+                        <Image source={shirt1} style={styles.image} />
+                        <View style={styles.separator} />
+                        <Image source={pants1} style={styles.image} />
+                        <View style={styles.separator} />
+                        <Image source={shoes1} style={styles.image} />
+                    </View>
+                </ScrollView>
 
                 <View style={styles.navigation}>
                     <Button color='#fff' title="Change clothes" onPress={() => this.props.navigation.navigate('Main')} />
@@ -37,13 +39,14 @@ const audioOptions = {
 
 const styles = StyleSheet.create({
     container: {
+        backgroundColor: 'skyblue',
         flex: 1,
     },
     content: {
         alignItems: 'center',
-        backgroundColor: 'skyblue',
         flex: 1,
         justifyContent: 'center',
+        paddingTop: 30,
     },
     image: {
         height: 150,

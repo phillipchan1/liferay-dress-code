@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Button, Image, StyleSheet, Text, View } from 'react-native'
+import { Button, Image, ScrollView, StyleSheet, Text, View } from 'react-native'
 
 import shirt1 from '../../../assets/shirt1.png'
 import pants1 from '../../../assets/pants1.png'
@@ -27,12 +27,16 @@ export default class MainScreen extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <View style={styles.content}>
-                    <Image source={shirt1} style={styles.image} />
-                    <View style={styles.separator} />
-                    <Image source={pants1} style={styles.image} />
-                    <View style={styles.separator} />
-                    <Image source={shoes1} style={styles.image} />
+                <View style={styles.container}>
+                    <ScrollView>
+                        <View style={styles.content}>
+                            <Image source={shirt1} style={styles.image} />
+                            <View style={styles.separator} />
+                            <Image source={pants1} style={styles.image} />
+                            <View style={styles.separator} />
+                            <Image source={shoes1} style={styles.image} />
+                        </View>
+                    </ScrollView>
                 </View>
             {/*    <Carousel
                     currentImage={this.state.tops}
@@ -81,13 +85,14 @@ const styles = StyleSheet.create({
         width: 300,
     },
     container: {
+        backgroundColor: 'skyblue',
         flex: 1,
     },
     content: {
         alignItems: 'center',
-        backgroundColor: 'skyblue',
         flex: 1,
         justifyContent: 'center',
+        paddingTop: 30,
     },
     image: {
         height: 150,
