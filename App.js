@@ -1,34 +1,29 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { Component } from 'react'
+import { StackNavigator } from 'react-navigation'
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <View style={styles.content}>
-          <Text>Content</Text>
-        </View>
-        <View style={styles.navigation}>
-          <Text>Navigation</Text>
-        </View>
-      </View>
-    );
-  }
+import HomeScreen from './components/pages/HomeScreen'
+import ResultsScreen from './components/pages/ResultsScreen'
+import MainScreen from './components/pages/MainScreen'
+
+const RootStack = StackNavigator(
+    {
+        Home: {
+            screen: HomeScreen,
+        },
+        Main: {
+            screen: MainScreen,
+        },
+        Results: {
+            screen: ResultsScreen,
+        },
+    },
+    {
+        initialRouteName: 'Home',
+    }
+)
+
+export default class App extends Component {
+    render() {
+        return <RootStack />
+    }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: '#dfdfdf',
-    flex: 1,
-  },
-  content: {
-    alignItems: 'center',
-    backgroundColor: 'skyblue',
-    flex: 1,
-    justifyContent: 'center',
-  },
-  navigation: {
-    backgroundColor: 'steelblue',
-    height: 100,
-  },
-});
