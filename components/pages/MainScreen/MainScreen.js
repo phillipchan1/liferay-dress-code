@@ -35,14 +35,13 @@ export default class MainScreen extends Component {
 
 const styles = StyleSheet.create({
     separator: {
-        borderBottomColor: '#dfdfdf',
+        borderBottomColor: '#fff',
         borderBottomWidth: 2,
         height: 1,
         margin: 15,
         width: 300,
     },
     container: {
-        backgroundColor: '#dfdfdf',
         flex: 1,
     },
     content: {

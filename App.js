@@ -7,7 +7,7 @@ import SplashScreen from './components/pages/SplashScreen'
 
 const RootStack = StackNavigator(
     {
-        Home: {
+        SplashScreen: {
             screen: SplashScreen,
         },
         Main: {
@@ -18,7 +18,7 @@ const RootStack = StackNavigator(
         },
     },
     {
-        initialRouteName: 'Main',
+        initialRouteName: 'SplashScreen',
     }
 )
 

@@ -22,7 +22,8 @@
     "expo": "^25.0.0",
     "react": "16.2.0",
     "react-native": "0.52.0",
-    "react-navigation": "^1.5.2",
-    "react-native-swipe-gestures": "^1.0.2"
+    "react-native-background-audio": "^1.1.4",
+    "react-native-swipe-gestures": "^1.0.2",
+    "react-navigation": "^1.5.2"
   }
 }
