@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { Button, StyleSheet, Text, View } from 'react-native'
 
 export default class MainScreen extends Component {
     render() {
@@ -8,8 +8,17 @@ export default class MainScreen extends Component {
                 <View style={styles.content}>
                     <Text>Content</Text>
                 </View>
+
                 <View style={styles.navigation}>
-                    <Text>Navigation</Text>
+                    <Button title="presets" onPress={() => console.log('presets')}>
+                        Presets
+                    </Button>
+                    <Button title="rand" onPress={() => console.log('rand')}>
+                        Random
+                    </Button>
+                    <Button title="results" onPress={() => console.log('results')}>
+                        Results
+                    </Button>
                 </View>
             </View>
         )
@@ -29,6 +38,9 @@ const styles = StyleSheet.create({
     },
     navigation: {
         backgroundColor: 'steelblue',
-        height: 100,
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        alignItems: 'center',
+        height: 50,
     },
 })
