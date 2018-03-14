@@ -76,7 +76,7 @@ export default class MainScreen extends Component {
                     <Presets handlePresetChange={option => this.handlePresetChange(option)} />
 
                     <Button
-                        color={styles.button}
+                        style={styles.button}
                         title="Random"
                         onPress={() => this.handleRandomChange()}
                     >

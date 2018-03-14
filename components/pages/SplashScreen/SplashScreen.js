@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Button, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-import clothing from '../../../assets/clothing'
+import shirt from '../../../assets/tops/shirt1.png'
+
 export default class SplashScreen extends Component {
     render() {
         return (
@@ -10,7 +11,7 @@ export default class SplashScreen extends Component {
                         onPress={() => this.props.navigation.navigate('Main')}
                         style={styles.content}
                     >
-                        <Image source={clothing.tops[0]} style={styles.image} />
+                        <Image source={shirt} style={styles.image} />
 
                         <Text style={styles.button}>Get dressed for work!</Text>
                     </TouchableOpacity>
