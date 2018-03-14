@@ -6,9 +6,13 @@ const Presets = props => {
     let index = 0
 
     const presets = [
-        { key: index++, label: 'The Weston Spéciale', wardrobe: { tops: 0, bottoms: 0, shoes: 0 } },
-        { key: index++, label: 'The Bchan Bootleg', wardrobe: { tops: 1, bottoms: 1, shoes: 1 } },
-        { key: index++, label: 'The Phillipe Sway', wardrobe: { tops: 2, bottoms: 2, shoes: 2 } },
+        {
+            key: index++,
+            label: 'The Weston Spéciale',
+            wardrobe: { tops: 14, bottoms: 4, shoes: 15 },
+        },
+        { key: index++, label: 'The Bchan Bootleg', wardrobe: { tops: 13, bottoms: 9, shoes: 4 } },
+        { key: index++, label: 'The Phillipe Sway', wardrobe: { tops: 9, bottoms: 10, shoes: 2 } },
     ]
 
     return (

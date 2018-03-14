@@ -3,7 +3,7 @@ import { Button, Image, StyleSheet, Text, View } from 'react-native'
 
 import Carousel from '../../molecules/Carousel'
 import Presets from '../../molecules/Presets'
-import clothing from '../../../assets/images'
+import clothing from '../../../assets/clothing'
 
 export default class MainScreen extends Component {
     constructor(props) {
@@ -13,8 +13,8 @@ export default class MainScreen extends Component {
 
         this.state = {
             tops: params ? params.tops : clothing.tops[0],
-            bottoms: params ? params.bottoms : clothing.bottoms[0],
-            shoes: params ? params.shoes : clothing.shoes[0],
+            bottoms: params ? params.bottoms : clothing.bottoms[1],
+            shoes: params ? params.shoes : clothing.shoes[1],
         }
     }
 

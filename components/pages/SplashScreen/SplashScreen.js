@@ -1,15 +1,16 @@
 import React, { Component } from 'react'
 import { Button, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-
-import shirt1 from '../../../assets/shirt1.png'
-
+import clothing from '../../../assets/clothing'
 export default class SplashScreen extends Component {
     render() {
         return (
             <View style={styles.container}>
                 <View style={styles.content}>
-                    <TouchableOpacity onPress={() => this.props.navigation.navigate('Main')} style={styles.content}>
-                        <Image source={shirt1} style={styles.image} />
+                    <TouchableOpacity
+                        onPress={() => this.props.navigation.navigate('Main')}
+                        style={styles.content}
+                    >
+                        <Image source={clothing.tops[0]} style={styles.image} />
 
                         <Text style={styles.button}>Get dressed for work!</Text>
                     </TouchableOpacity>
