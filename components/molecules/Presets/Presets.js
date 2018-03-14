@@ -1,6 +1,6 @@
 import React from 'react'
 import ModalSelector from 'react-native-modal-selector'
-import { TextInput } from 'react-native'
+import { Button, TextInput } from 'react-native'
 
 const Presets = props => {
     let index = 0
@@ -15,11 +15,12 @@ const Presets = props => {
         <ModalSelector
             data={presets}
             initValue="Presets"
-            supportedOrientations={['landscape']}
             accessible={true}
             onChange={props.handlePresetChange}
         >
-            <TextInput editable={false} placeholder="Presets" value="Presets" />
+            <Button style={{ color: 'white' }} title="Presets" onPress={() => console.log()}>
+                Presets
+            </Button>
         </ModalSelector>
     )
 }

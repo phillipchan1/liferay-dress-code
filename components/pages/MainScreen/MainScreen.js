@@ -7,14 +7,14 @@ import clothing from '../../../assets/images'
 
 export default class MainScreen extends Component {
     constructor(props) {
-        super(props);
+        super(props)
 
-        let params = props.navigation.state.params;
+        let params = props.navigation.state.params
 
         this.state = {
-            tops:  params ? params.tops : clothing.tops[0],
+            tops: params ? params.tops : clothing.tops[0],
             bottoms: params ? params.bottoms : clothing.bottoms[0],
-            shoes: params ? params.shoes : clothing.shoes[0]
+            shoes: params ? params.shoes : clothing.shoes[0],
         }
     }
 
@@ -75,12 +75,16 @@ export default class MainScreen extends Component {
                 <View style={styles.navigation}>
                     <Presets handlePresetChange={option => this.handlePresetChange(option)} />
 
-                    <Button color="#fff" title="Random" onPress={() => this.handleRandomChange()}>
+                    <Button
+                        color={styles.button}
+                        title="Random"
+                        onPress={() => this.handleRandomChange()}
+                    >
                         Random
                     </Button>
 
                     <Button
-                        color="#fff"
+                        style={styles.button}
                         title="Results"
                         onPress={() => this.props.navigation.navigate('Results', this.state)}
                     >
@@ -93,6 +97,9 @@ export default class MainScreen extends Component {
 }
 
 const styles = StyleSheet.create({
+    button: {
+        color: 'white',
+    },
     separator: {
         borderBottomColor: '#fff',
         borderBottomWidth: 2,
