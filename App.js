@@ -7,7 +7,7 @@ import SplashScreen from './components/pages/SplashScreen'
 
 const RootStack = StackNavigator(
     {
-        SplashScreen: {
+        Splash: {
             screen: SplashScreen,
             navigationOptions: {
                 header: null
