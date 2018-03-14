@@ -9,10 +9,9 @@ export default class ResultsScreen extends Component {
                 <Text style={styles.heading}>Looking snazzy!</Text>
 
                 <View style={styles.content}>
+                    <Image source={require('../../../assets/phil.png')} style={{height: 70, width: 60}} />
                     <Image source={this.props.navigation.state.params.tops.image} style={styles.image} />
-                    <View style={styles.separator} />
                     <Image source={this.props.navigation.state.params.bottoms.image} style={styles.image} />
-                    <View style={styles.separator} />
                     <Image source={this.props.navigation.state.params.shoes.image} style={styles.image} />
                 </View>
 
