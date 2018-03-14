@@ -8,18 +8,36 @@ export default class ResultsScreen extends Component {
             <View style={styles.container}>
                 <View style={styles.content}>
                     <Text style={styles.heading}>Looking snazzy!</Text>
-                    <Image source={this.props.navigation.state.params.tops.image} style={styles.image} />
+
+                    <Image
+                        source={this.props.navigation.state.params.tops.image}
+                        style={styles.image}
+                    />
+
                     <View style={styles.separator} />
-                    <Image source={this.props.navigation.state.params.bottoms.image} style={styles.image} />
+
+                    <Image
+                        source={this.props.navigation.state.params.bottoms.image}
+                        style={styles.image}
+                    />
+
                     <View style={styles.separator} />
-                    <Image source={this.props.navigation.state.params.shoes.image} style={styles.image} />
+
+                    <Image
+                        source={this.props.navigation.state.params.shoes.image}
+                        style={styles.image}
+                    />
                 </View>
 
                 <View style={styles.navigation}>
-                    <Button color='#fff' title="Change clothes" />
+                    <Button
+                        color="#fff"
+                        onPress={() => console.log('temp')}
+                        title="Change clothes"
+                    />
                 </View>
 
-               <BgAudio options={audioOptions}></BgAudio>
+                <BgAudio options={audioOptions} />
             </View>
         )
     }
@@ -27,8 +45,8 @@ export default class ResultsScreen extends Component {
 
 const audioOptions = {
     source: {
-        local: require('../../../assets/whatislove.mp3')
-    }
+        local: require('../../../assets/whatislove.mp3'),
+    },
 }
 
 const styles = StyleSheet.create({

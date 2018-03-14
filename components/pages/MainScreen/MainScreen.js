@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Button, Image, StyleSheet, Text, View } from 'react-native'
 
-import Carousel from '../../molecules/carousel'
+import Carousel from '../../molecules/Carousel'
 import Presets from '../../molecules/Presets'
 import clothing from '../../../assets/images'
 
@@ -43,7 +43,9 @@ export default class MainScreen extends Component {
                         length={clothing.tops.length - 1}
                         onImageChange={data => this.handleImageChange(data)}
                     />
+
                     <View style={styles.separator} />
+
                     <Carousel
                         currentImage={this.state.bottoms}
                         style={styles.carousel}
@@ -66,6 +68,7 @@ export default class MainScreen extends Component {
                     <Button color="#fff" title="Random" onPress={() => console.log('random')}>
                         Random
                     </Button>
+
                     <Button
                         color="#fff"
                         title="Results"
