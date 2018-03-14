@@ -34,6 +34,14 @@ export default class MainScreen extends Component {
         })
     }
 
+    handleRandomChange() {
+        this.setState({
+            tops: clothing.tops[Math.floor(Math.random() * clothing.tops.length)],
+            bottoms: clothing.bottoms[Math.floor(Math.random() * clothing.bottoms.length)],
+            shoes: clothing.shoes[Math.floor(Math.random() * clothing.shoes.length)],
+        })
+    }
+
     render() {
         return (
             <View style={styles.container}>
@@ -67,7 +75,7 @@ export default class MainScreen extends Component {
                 <View style={styles.navigation}>
                     <Presets handlePresetChange={option => this.handlePresetChange(option)} />
 
-                    <Button color="#fff" title="Random" onPress={() => console.log('random')}>
+                    <Button color="#fff" title="Random" onPress={() => this.handleRandomChange()}>
                         Random
                     </Button>
 
