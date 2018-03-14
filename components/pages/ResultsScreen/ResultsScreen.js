@@ -6,38 +6,21 @@ export default class ResultsScreen extends Component {
     render() {
         return (
             <View style={styles.container}>
+                <Text style={styles.heading}>Looking snazzy!</Text>
+
                 <View style={styles.content}>
-                    <Text style={styles.heading}>Looking snazzy!</Text>
-
-                    <Image
-                        source={this.props.navigation.state.params.tops.image}
-                        style={styles.image}
-                    />
-
+                    <Image source={this.props.navigation.state.params.tops.image} style={styles.image} />
                     <View style={styles.separator} />
-
-                    <Image
-                        source={this.props.navigation.state.params.bottoms.image}
-                        style={styles.image}
-                    />
-
+                    <Image source={this.props.navigation.state.params.bottoms.image} style={styles.image} />
                     <View style={styles.separator} />
-
-                    <Image
-                        source={this.props.navigation.state.params.shoes.image}
-                        style={styles.image}
-                    />
+                    <Image source={this.props.navigation.state.params.shoes.image} style={styles.image} />
                 </View>
 
                 <View style={styles.navigation}>
-                    <Button
-                        color="#fff"
-                        onPress={() => console.log('temp')}
-                        title="Change clothes"
-                    />
+                    <Button color='#fff' title="Change clothes" onPress={() => this.props.navigation.navigate('Main', this.props.navigation.state.params)} />
                 </View>
 
-                <BgAudio options={audioOptions} />
+               <BgAudio options={audioOptions}></BgAudio>
             </View>
         )
     }
@@ -45,8 +28,8 @@ export default class ResultsScreen extends Component {
 
 const audioOptions = {
     source: {
-        local: require('../../../assets/whatislove.mp3'),
-    },
+        local: require('../../../assets/whatislove.mp3')
+    }
 }
 
 const styles = StyleSheet.create({
@@ -58,18 +41,18 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         flex: 1,
         justifyContent: 'center',
-        paddingTop: 30,
     },
     image: {
-        height: 150,
-        width: 150,
+        height: 100,
+        width: 100,
     },
     heading: {
         color: '#fff',
-        fontSize: 50,
+        fontSize: 40,
         paddingBottom: 30,
         paddingLeft: 15,
         paddingRight: 15,
+        paddingTop: 60,
         textAlign: 'center',
     },
     navigation: {

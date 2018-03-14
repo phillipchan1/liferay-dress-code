@@ -6,14 +6,17 @@ import Presets from '../../molecules/Presets'
 import clothing from '../../../assets/images'
 
 export default class MainScreen extends Component {
-    constructor() {
-        super()
+    constructor(props) {
+        super(props);
+
+        let params = props.navigation.state.params;
 
         this.state = {
-            tops: clothing.tops[0],
-            bottoms: clothing.bottoms[0],
-            shoes: clothing.shoes[0],
+            tops:  params ? params.tops : clothing.tops[0],
+            bottoms: params ? params.bottoms : clothing.bottoms[0],
+            shoes: params ? params.shoes : clothing.shoes[0]
         }
+        console.log(this.state, params);
     }
 
     handleImageChange(data) {
