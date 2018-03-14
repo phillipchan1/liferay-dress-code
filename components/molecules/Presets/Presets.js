@@ -22,7 +22,7 @@ const Presets = props => {
             accessible={true}
             onChange={props.handlePresetChange}
         >
-            <Button style={{ color: 'white' }} title="Presets" onPress={() => console.log()}>
+            <Button color="white" style={{ color: 'white' }} title="Presets" onPress={() => console.log()}>
                 Presets
             </Button>
         </ModalSelector>

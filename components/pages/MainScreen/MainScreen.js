@@ -74,6 +74,7 @@ export default class MainScreen extends Component {
 
                     <Button
                         style={styles.button}
+                        color="white"
                         title="Random"
                         onPress={() => this.handleRandomChange()}
                     >
@@ -82,6 +83,7 @@ export default class MainScreen extends Component {
 
                     <Button
                         style={styles.button}
+                        color="white"
                         title="Results"
                         onPress={() => this.props.navigation.navigate('Results', this.state)}
                     >
@@ -95,7 +97,7 @@ export default class MainScreen extends Component {
 
 const styles = StyleSheet.create({
     button: {
-        color: 'white',
+        color: '#FFF',
     },
     separator: {
         borderBottomColor: '#fff',
