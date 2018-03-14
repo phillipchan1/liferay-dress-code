@@ -25,27 +25,31 @@ export default class MainScreen extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <Carousel
-                    currentImage={this.state.tops}
-                    style={styles.carousel}
-                    group="tops"
-                    length={clothing.tops.length - 1}
-                    onImageChange={(data) => this.handleImageChange(data) }
-                />
-                <Carousel
-                    currentImage={this.state.bottoms}
-                    style={styles.carousel}
-                    group="bottoms"
-                    length={clothing.bottoms.length - 1}
-                    onImageChange={(data) => this.handleImageChange(data) }
-                />
-                <Carousel
-                    currentImage={this.state.shoes}
-                    style={styles.carousel}
-                    group="shoes"
-                    length={clothing.shoes.length - 1}
-                    onImageChange={(data) => this.handleImageChange(data) }
-                />
+                <View style={styles.content}>
+                    <Carousel
+                        currentImage={this.state.tops}
+                        style={styles.carousel}
+                        group="tops"
+                        length={clothing.tops.length - 1}
+                        onImageChange={(data) => this.handleImageChange(data) }
+                    />
+                    <View style={styles.separator} />
+                    <Carousel
+                        currentImage={this.state.bottoms}
+                        style={styles.carousel}
+                        group="bottoms"
+                        length={clothing.bottoms.length - 1}
+                        onImageChange={(data) => this.handleImageChange(data) }
+                    />
+                    <View style={styles.separator} />
+                    <Carousel
+                        currentImage={this.state.shoes}
+                        style={styles.carousel}
+                        group="shoes"
+                        length={clothing.shoes.length - 1}
+                        onImageChange={(data) => this.handleImageChange(data) }
+                    />
+                </View>
                 <View style={styles.navigation}>
                     <Button color='#fff' title="Presets" onPress={() => console.log('presets')}>
                         Presets
@@ -112,15 +116,19 @@ const styles = StyleSheet.create({
         borderBottomColor: '#fff',
         borderBottomWidth: 2,
         height: 1,
-        margin: 15,
-        width: 300,
+        margin: '5%',
+        width: '90%',
+    },
+    carousel: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
     },
     container: {
         backgroundColor: 'skyblue',
         flex: 1,
     },
     content: {
-        alignItems: 'center',
         flex: 1,
         justifyContent: 'center',
         paddingTop: 30,

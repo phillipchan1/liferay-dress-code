@@ -9,16 +9,25 @@ const RootStack = StackNavigator(
     {
         SplashScreen: {
             screen: SplashScreen,
+            navigationOptions: {
+                header: null
+            },
         },
         Main: {
             screen: MainScreen,
+            navigationOptions: {
+                header: null
+            },
         },
         Results: {
             screen: ResultsScreen,
+            navigationOptions: {
+                header: null
+            },
         },
     },
     {
-        initialRouteName: 'SplashScreen',
+        initialRouteName: 'Main',
     }
 )
 

@@ -1,24 +1,22 @@
 import React, { Component } from 'react'
-import { Button, Image, ScrollView, StyleSheet, Text, View } from 'react-native'
+import { Button, Image, StyleSheet, Text, View } from 'react-native'
 import BgAudio from 'react-native-background-audio'
 
 export default class ResultsScreen extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <ScrollView>
-                    <View style={styles.content}>
-                        <Text style={styles.heading}>Looking snazzy!</Text>
-                        <Image source={this.props.navigation.state.params.tops.image} style={styles.image} />
-                        <View style={styles.separator} />
-                        <Image source={this.props.navigation.state.params.bottoms.image} style={styles.image} />
-                        <View style={styles.separator} />
-                        <Image source={this.props.navigation.state.params.shoes.image} style={styles.image} />
-                    </View>
-                </ScrollView>
+                <View style={styles.content}>
+                    <Text style={styles.heading}>Looking snazzy!</Text>
+                    <Image source={this.props.navigation.state.params.tops.image} style={styles.image} />
+                    <View style={styles.separator} />
+                    <Image source={this.props.navigation.state.params.bottoms.image} style={styles.image} />
+                    <View style={styles.separator} />
+                    <Image source={this.props.navigation.state.params.shoes.image} style={styles.image} />
+                </View>
 
                 <View style={styles.navigation}>
-                    <Button color='#fff' title="Change clothes" onPress={() => this.props.navigation.navigate('Main')} />
+                    <Button color='#fff' title="Change clothes" />
                 </View>
 
                <BgAudio options={audioOptions}></BgAudio>
