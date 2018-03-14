@@ -48,7 +48,6 @@ export default class MainScreen extends Component {
                 <View style={styles.content}>
                     <Carousel
                         currentImage={this.state.tops}
-                        style={styles.carousel}
                         group="tops"
                         length={clothing.tops.length - 1}
                         onImageChange={data => this.handleImageChange(data)}
@@ -58,7 +57,6 @@ export default class MainScreen extends Component {
 
                     <Carousel
                         currentImage={this.state.bottoms}
-                        style={styles.carousel}
                         group="bottoms"
                         length={clothing.bottoms.length - 1}
                         onImageChange={data => this.handleImageChange(data)}
@@ -66,7 +64,6 @@ export default class MainScreen extends Component {
                     <View style={styles.separator} />
                     <Carousel
                         currentImage={this.state.shoes}
-                        style={styles.carousel}
                         group="shoes"
                         length={clothing.shoes.length - 1}
                         onImageChange={data => this.handleImageChange(data)}
@@ -106,11 +103,6 @@ const styles = StyleSheet.create({
         height: 1,
         margin: '5%',
         width: '90%',
-    },
-    carousel: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
     },
     container: {
         backgroundColor: 'skyblue',

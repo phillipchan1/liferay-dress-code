@@ -1,47 +1,45 @@
 import React from 'react'
-import { AppRegistry, View, StyleSheet, Text, Image } from 'react-native'
+import { AppRegistry, View, StyleSheet, Text, Image, style } from 'react-native'
 import GestureRecognizer, { swipeDirections } from 'react-native-swipe-gestures'
 
-export default class Carousel extends React.Component {
-    swipedLeft() {
-        if (this.props.currentImage.index === this.props.length) {
-            this.props.onImageChange({
-                group: this.props.group,
+const Carousel = ({ currentImage, length, group, onImageChange }) => {
+    function swipedLeft() {
+        if (currentImage.index === length) {
+            onImageChange({
+                group: group,
                 index: 0,
             })
         } else {
-            this.props.onImageChange({
-                group: this.props.group,
-                index: this.props.currentImage.index + 1,
+            onImageChange({
+                group: group,
+                index: currentImage.index + 1,
             })
         }
     }
 
-    swipedRight() {
-        if (this.props.currentImage.index === 0) {
-            this.props.onImageChange({
-                group: this.props.group,
-                index: this.props.length,
+    function swipedRight() {
+        if (currentImage.index === 0) {
+            onImageChange({
+                group: group,
+                index: length,
             })
         } else {
-            this.props.onImageChange({
-                group: this.props.group,
-                index: this.props.currentImage.index - 1,
+            onImageChange({
+                group: group,
+                index: currentImage.index - 1,
             })
         }
     }
 
-    render() {
-        return (
-            <GestureRecognizer
-                onSwipeLeft={this.swipedLeft.bind(this)}
-                onSwipeRight={this.swipedRight.bind(this)}
-                style={this.props.style}
-            >
-                <Image style={styles.image} source={this.props.currentImage.image} />
-            </GestureRecognizer>
-        )
-    }
+    return (
+        <GestureRecognizer
+            onSwipeLeft={swipedLeft}
+            onSwipeRight={swipedRight}
+            style={styles.carousel}
+        >
+            <Image style={styles.image} source={currentImage.image} />
+        </GestureRecognizer>
+    )
 }
 
 const styles = StyleSheet.create({
@@ -49,4 +47,12 @@ const styles = StyleSheet.create({
         height: 100,
         width: 100,
     },
+    carousel: {
+        backgroundColor: 'skyblue',
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
 })
+
+export default Carousel
