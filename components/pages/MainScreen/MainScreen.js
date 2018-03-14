@@ -16,7 +16,6 @@ export default class MainScreen extends Component {
             bottoms: params ? params.bottoms : clothing.bottoms[0],
             shoes: params ? params.shoes : clothing.shoes[0]
         }
-        console.log(this.state, params);
     }
 
     handleImageChange(data) {

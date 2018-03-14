@@ -17,7 +17,10 @@ export default class ResultsScreen extends Component {
                 </View>
 
                 <View style={styles.navigation}>
-                    <Button color='#fff' title="Change clothes" onPress={() => this.props.navigation.navigate('Main', this.props.navigation.state.params)} />
+                    <Button
+                        color='#fff'
+                        title="Change clothes"
+                        onPress={() => this.props.navigation.navigate('Main', this.props.navigation.state.params)} />
                 </View>
 
                <BgAudio options={audioOptions}></BgAudio>

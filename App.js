@@ -27,7 +27,7 @@ const RootStack = StackNavigator(
         },
     },
     {
-        initialRouteName: 'Main',
+        initialRouteName: 'Splash',
     }
 )
 
